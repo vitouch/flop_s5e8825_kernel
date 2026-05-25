@@ -277,7 +277,7 @@ static ssize_t scsc_bt_shm_h4_hci_cmd_write(const unsigned char *data, size_t co
 		memcpy(td->data, data, count);
 		td->length = (u16)count;
 
-		if (is_aosp_mode_fast() && op_code == HCI_ENH_SETUP_ESCO_CONNECTION) {
+		if (op_code == HCI_ENH_SETUP_ESCO_CONNECTION) {
 			// input_transport_unit_size
 			td->data[55] = 16;
 			// output_transport_unit_size
